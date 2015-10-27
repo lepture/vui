@@ -1,5 +1,5 @@
 <template>
-<button class="v-menu" :class="{'v-menu--open':open}" v-on:click.prevent="open=!open">
+<button class="v-menu-button" :class="{'v-menu-button--open':open}" v-on:click.prevent="open=!open">
   <span><slot>Menu</slot></span>
 </button>
 </template>
@@ -13,7 +13,7 @@ export default {
 </script>
 
 <style>
-button.v-menu {
+button.v-menu-button {
   position: relative;
   border: none;
   background-color: transparent;
@@ -23,9 +23,9 @@ button.v-menu {
   height: 2em;
   line-height: 1;
 }
-button.v-menu:before,
-button.v-menu:after,
-button.v-menu > span {
+button.v-menu-button:before,
+button.v-menu-button:after,
+button.v-menu-button > span {
   position: absolute;
   left: 0;
   width: 100%;
@@ -34,32 +34,32 @@ button.v-menu > span {
   margin: 0;
   background: #666;
 }
-button.v-menu:before,
-button.v-menu:after {
+button.v-menu-button:before,
+button.v-menu-button:after {
   top: 50%;
   content: '';
   pointer-events: none;
   transition: transform 0.25s;
   transform-origin: 50% 50%;
 }
-button.v-menu:before {
+button.v-menu-button:before {
   transform: translate3d(0, -10px, 0);
 }
-button.v-menu:after {
+button.v-menu-button:after {
   transform: translate3d(0, 10px, 0);
 }
-button.v-menu > span {
+button.v-menu-button > span {
   overflow: hidden;
   text-indent: 200%;
   transition: opacity 0.25s;
 }
-button.v-menu--open:before {
+button.v-menu-button--open:before {
   transform: rotate3d(0, 0, 1, 45deg);
 }
-button.v-menu--open:after {
+button.v-menu-button--open:after {
   transform: rotate3d(0, 0, 1, -45deg);
 }
-button.v-menu--open > span {
+button.v-menu-button--open > span {
   opacity: 0;
 }
 </style>
