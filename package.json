@@ -1,0 +1,16 @@
+{
+  "name": "vue-ui",
+  "version": "0.1.0",
+  "description": "UI framework for mobile built with vue.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "UI",
+    "Mobile",
+    "Vue"
+  ],
+  "author": "Hsiaoming Yang <me@lepture.com>",
+  "license": "MIT"
+}
