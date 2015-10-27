@@ -32,7 +32,7 @@ button.v-menu-button > span {
   height: 2px;
   padding: 0;
   margin: 0;
-  background: #666;
+  background: var(--menu-button-color);
 }
 button.v-menu-button:before,
 button.v-menu-button:after {

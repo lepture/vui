@@ -29,9 +29,9 @@ module.exports = {
 
   postcss: function (pack) {
     // use webpack context
-    [
+    return [
       require('postcss-import')({addDependencyTo: pack}),
-      require('postcss-custom-properties'),
+      require('postcss-custom-properties')({variables: require('./variables')}),
       require('autoprefixer'),
     ]
   },
