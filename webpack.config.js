@@ -27,18 +27,12 @@ module.exports = {
       new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.js"),
   ],
 
-  postcss: function () {
+  postcss: function (pack) {
     // use webpack context
-    var postcssImport = require('postcss-import');
-
-    return [
-      postcssImport({
-        onImport: function (files) {
-          files.forEach(this.addDependency);
-        }.bind(this)
-      }),
-
+    [
+      require('postcss-import')({addDependencyTo: pack}),
       require('postcss-custom-properties'),
+      require('autoprefixer'),
     ]
   },
 
