@@ -1,6 +1,6 @@
 <template>
 <label class="v-toggle" :class="{'v-toggle--checked': checked}">
-<input type="checkbox" v-model="checked">
+<input type="checkbox" v-model="checked" :name="name">
 <div class="v-toggle__wrap">
   <span class="v-toggle__handle"></span>
   <div class="v-toggle__mask"></div>
@@ -14,7 +14,10 @@ export default {
     checked: {
       type: Boolean,
       default: false,
-    }
+    },
+    name: {
+      type: String,
+    },
   }
 }
 </script>

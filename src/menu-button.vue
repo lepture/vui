@@ -6,8 +6,11 @@
 
 <script>
 export default {
-  data () {
-    return {open: false}
+  props: {
+    open: {
+      type: Boolean,
+      default: false,
+    }
   }
 }
 </script>
