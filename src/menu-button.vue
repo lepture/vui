@@ -55,6 +55,7 @@ button.v-menu-button:after {
 button.v-menu-button > span {
   overflow: hidden;
   text-indent: 200%;
+  color: rgba(0, 0, 0, 0);
   transition: opacity 0.25s;
 }
 button.v-menu-button--open:before {
