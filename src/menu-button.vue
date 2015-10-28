@@ -25,6 +25,7 @@ button.v-menu-button {
   width: 2.5em;
   height: 2em;
   line-height: 1;
+  -webkit-tap-highlight-color: transparent;
 }
 button.v-menu-button:before,
 button.v-menu-button:after,

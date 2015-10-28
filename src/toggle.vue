@@ -29,6 +29,7 @@ label.v-toggle {
   pointer-events: auto;
   padding: 5px;
   margin: -5px;
+  -webkit-tap-highlight-color: transparent;
 }
 label.v-toggle input {
   display: none;
