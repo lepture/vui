@@ -3,11 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="/build/app.css">
   <title>App</title>
 </head>
 <body>
   <div id="app">
     <menu-button></menu-button>
+    <toggle name="switch"></toggle>
+    <div class="container">
+      <slider-range>
+        <span slot="left">L</span>
+        <span slot="right">H</span>
+      </slider-range>
+    </div>
   </div>
   <script src="/build/vendor.js"></script>
   <script src="/build/app.js"></script>

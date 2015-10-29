@@ -23,6 +23,7 @@
     "babel-loader": "^5.3.2",
     "babel-runtime": "^5.8.29",
     "css-loader": "^0.21.0",
+    "extract-text-webpack-plugin": "^0.8.2",
     "postcss": "^5.0.10",
     "postcss-custom-properties": "^5.0.0",
     "postcss-import": "^7.1.0",
@@ -32,10 +33,15 @@
     "vue-html-loader": "^1.0.0",
     "vue-loader": "^5.0.0",
     "webpack": "^1.12.2",
-    "webpack-dev-server": "^1.12.1"
-  },
-  "dependencies": {
+    "webpack-dev-server": "^1.12.1",
     "vue": "^1.0.0",
     "vue-router": "^0.7.5"
+  },
+  "peerDependencies": {
+    "vue": "^1.0.0",
+    "vue-router": "^0.7.5"
+  },
+  "dependencies": {
+    "word-color": "^1.2.0"
   }
 }

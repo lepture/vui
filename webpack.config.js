@@ -1,12 +1,14 @@
 var webpack = require("webpack");
 var vue = require("vue-loader");
-var cssLoader = "style-loader!css-loader?sourceMap!postcss-loader";
+
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var cssLoader = ExtractTextPlugin.extract("style-loader", "css-loader?sourceMap!postcss-loader");
 
 var publicPath = "/build/";
 
 module.exports = {
   entry: {
-    app: ["./index.js"],
+    app: ["./docs/index.js"],
     vendor: ["vue", "vue-router"],
   },
 
@@ -24,6 +26,7 @@ module.exports = {
   },
 
   plugins: [
+      new ExtractTextPlugin("app.css", {disable: false}),
       new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.js"),
   ],
 
