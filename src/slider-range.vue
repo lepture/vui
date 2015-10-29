@@ -72,6 +72,6 @@ export default {
   left: -2001px;
   width: 2000px;
   height: 2px;
-  background: rgba(0, 0, 0, 0.6);
+  background: var(--slider-range-color);
 }
 </style>
