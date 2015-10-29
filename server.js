@@ -20,7 +20,8 @@ if (process.env.NODE_ENV === 'local') {
 }
 
 var app = new WebpackDevServer(webpack(config), {
-  publicPath: config.output.publicPath,
+  contentBase: config.output.contentBase,
+  publicPath: '/assets/',
   historyApiFallback: true,
   proxy: proxy,
   hot: true,

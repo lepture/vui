@@ -3,8 +3,8 @@ var Vue = require('vue');
 new Vue({
   el: '#app',
   components: {
-    'menu-button': require('../src/menu-button.vue'),
-    'toggle': require('../src/toggle.vue'),
-    'slider-range': require('../src/slider-range.vue'),
+    'menu-button': require('../ui/menu-button.vue'),
+    'toggle': require('../ui/toggle.vue'),
+    'slider-range': require('../ui/slider-range.vue'),
   }
 });

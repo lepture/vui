@@ -4,7 +4,7 @@ var vue = require("vue-loader");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var cssLoader = ExtractTextPlugin.extract("style-loader", "css-loader?sourceMap!postcss-loader");
 
-var publicPath = "/build/";
+var contentBase = __dirname + '/public';
 
 module.exports = {
   entry: {
@@ -13,9 +13,9 @@ module.exports = {
   },
 
   output: {
-    path: __dirname + publicPath,
+    path: contentBase + '/assets',
     filename: 'app.js',
-    publicPath: publicPath,
+    contentBase: contentBase,
   },
 
   module: {
