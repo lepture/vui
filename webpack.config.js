@@ -1,5 +1,4 @@
 var webpack = require("webpack");
-var vue = require("vue-loader");
 
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var cssLoader = ExtractTextPlugin.extract("style-loader", "css-loader?sourceMap!postcss-loader");
@@ -8,19 +7,21 @@ var contentBase = __dirname + '/public';
 
 module.exports = {
   entry: {
-    app: ["./docs/index.js"],
+    app: ["./index.js"],
     vendor: ["vue", "vue-router"],
   },
 
   output: {
     path: contentBase + '/assets',
-    filename: 'app.js',
+    filename: 'vui.js',
+    library: 'vui',
+    libraryTarget: 'umd',
     contentBase: contentBase,
   },
 
   module: {
     loaders: [
-      {test: /\.vue$/, loader: vue.withLoaders({css: cssLoader})},
+      {test: /\.vue$/, loader: 'vue'},
       {test: /\.css$/, loader: cssLoader},
     ]
   },
@@ -29,6 +30,12 @@ module.exports = {
       new ExtractTextPlugin("app.css", {disable: false}),
       new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.js"),
   ],
+
+  vue: {
+    loaders: {
+      css: cssLoader,
+    }
+  },
 
   postcss: function (pack) {
     // use webpack context

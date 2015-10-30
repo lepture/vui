@@ -9,21 +9,10 @@ config.plugins.push(new webpack.HotModuleReplacementPlugin());
 
 config.devtool = 'eval';
 
-var proxy = {
-  "/api/*": {target: "http://python-china.org", host: "python-china.org"},
-};
-if (process.env.NODE_ENV === 'local') {
-  proxy = {
-    "/api/*": "http://192.168.30.12:5000",
-    "/session*": "http://192.168.30.12:5000",
-  };
-}
-
 var app = new WebpackDevServer(webpack(config), {
-  contentBase: config.output.contentBase,
+  contentBase: config.output.contentBase + '/_site',
   publicPath: '/assets/',
   historyApiFallback: true,
-  proxy: proxy,
   hot: true,
 });
 

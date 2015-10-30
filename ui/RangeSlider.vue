@@ -1,5 +1,5 @@
 <template>
-<div class="v-slider-range">
+<div class="v-range-slider">
   <slot name="left"></slot>
   <input type="range" v-model="value" :min="min" :max="max" :step="step" :name="name">
   <slot name="right"></slot>
@@ -29,12 +29,12 @@ export default {
 </script>
 
 <style>
-.v-slider-range {
+.v-range-slider {
   display: flex;
   align-items: center;
   padding: 2px 11px;
 }
-.v-slider-range input[type=range] {
+.v-range-slider input[type=range] {
   -webkit-appearance: none;
   flex: 1;
   display: block;
@@ -45,14 +45,14 @@ export default {
   outline: none;
   -webkit-tap-highlight-color: transparent;
 }
-.v-slider-range input[type=range]::-webkit-slider-runnable-track {
+.v-range-slider input[type=range]::-webkit-slider-runnable-track {
   position: relative;
   height: 2px;
   background: #ddd;
   border: none;
   border-radius: 3px;
 }
-.v-slider-range input[type=range]::-webkit-slider-thumb {
+.v-range-slider input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   position: relative;
   margin-top: -12px;
@@ -64,7 +64,7 @@ export default {
   background: white;
   box-shadow: 0 0 1px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,0.2);
 }
-.v-slider-range input[type=range]::-webkit-slider-thumb:before {
+.v-range-slider input[type=range]::-webkit-slider-thumb:before {
   position: absolute;
   display: inline-block;
   content: '';
@@ -72,6 +72,6 @@ export default {
   left: -2001px;
   width: 2000px;
   height: 2px;
-  background: var(--slider-range-color);
+  background: var(--range-slider-color);
 }
 </style>
