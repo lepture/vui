@@ -1,6 +1,6 @@
 {
-  "name": "monas",
-  "version": "0.1.0",
+  "name": "vui",
+  "version": "0.1.0-alpha1",
   "description": "UI framework for mobile built with vue.",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/lepture/monas.git"
+    "url": "git://github.com/lepture/vui.git"
   },
   "keywords": [
     "UI",
