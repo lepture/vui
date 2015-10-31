@@ -1,21 +1,20 @@
-var webpack = require("webpack");
+var webpack = require('webpack')
 
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var cssLoader = ExtractTextPlugin.extract("style-loader", "css-loader?sourceMap!postcss-loader");
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var cssLoader = ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap!postcss-loader')
 
-var contentBase = __dirname + '/public';
+var contentBase = __dirname + '/public'
 
-module.exports = {
+
+var options = {
   entry: {
-    app: ["./index.js"],
-    vendor: ["vue", "vue-router"],
+    app: ['./app.js'],
+    vendor: ['vue', 'vue-router'],
   },
 
   output: {
     path: contentBase + '/assets',
-    filename: 'vui.js',
-    library: 'vui',
-    libraryTarget: 'umd',
+    filename: 'app.js',
     contentBase: contentBase,
   },
 
@@ -27,8 +26,8 @@ module.exports = {
   },
 
   plugins: [
-      new ExtractTextPlugin("app.css", {disable: false}),
-      new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.js"),
+      new ExtractTextPlugin('app.css', {disable: false}),
+      new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
   ],
 
   vue: {
@@ -46,5 +45,17 @@ module.exports = {
     ]
   },
 
-  devtool: "source-map",
-};
+  devtool: 'source-map',
+}
+
+if (process.env.NODE_ENV === 'production') {
+  options.entry = ['./index.js']
+  options.output = {
+    path: './build',
+    filename: 'vui.js',
+    library: 'vui',
+    libraryTarget: 'umd',
+  }
+}
+
+module.exports = options
