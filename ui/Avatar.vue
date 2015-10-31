@@ -1,5 +1,5 @@
 <template>
-  <span class="v-avatar" :style="styleSize" :class="{'v-avatar--image': image}">
+  <span class="v-avatar" :style="styleSize" :class="{'v-avatar--image': image}" :aria-label="alt">
     <span class="v-avatar__text" v-text="name" :style="{background: bg, color: fg}"></span>
   </span>
 </template>

@@ -1,5 +1,5 @@
 <template>
-<button class="v-menu-button" :class="{'v-menu-button--open':open}" v-on:click.prevent="open=!open">
+<button class="v-menu-button" :class="{'v-menu-button--checked':checked}" v-on:click.prevent="checked=!checked">
   <span><slot>Menu</slot></span>
 </button>
 </template>
@@ -7,7 +7,7 @@
 <script>
 export default {
   props: {
-    open: {
+    checked: {
       type: Boolean,
       default: false,
     }
@@ -58,13 +58,13 @@ button.v-menu-button > span {
   color: rgba(0, 0, 0, 0);
   transition: opacity 0.25s;
 }
-button.v-menu-button--open:before {
+button.v-menu-button--checked:before {
   transform: rotate3d(0, 0, 1, 45deg);
 }
-button.v-menu-button--open:after {
+button.v-menu-button--checked:after {
   transform: rotate3d(0, 0, 1, -45deg);
 }
-button.v-menu-button--open > span {
+button.v-menu-button--checked > span {
   opacity: 0;
 }
 </style>
