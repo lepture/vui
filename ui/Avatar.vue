@@ -6,6 +6,7 @@
 
 <script>
 import wc from "word-color"
+var failed = {}
 
 export default {
   props: {
@@ -62,7 +63,7 @@ export default {
 
     // load failed
     var key = 'v-avatar:' + this.src
-    if (sessionStorage[key]) return
+    if (failed[key]) return
 
     var img = new Image()
     img.src = this.src
@@ -74,7 +75,7 @@ export default {
       me.$el.appendChild(img)
     }
     img.onerror = function() {
-      sessionStorage[key] = '1'
+      failed[key] = 1
     }
   }
 }
