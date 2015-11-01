@@ -1,0 +1,40 @@
+.v-button, button.v-button, a.v-button {
+  display: inline-block;
+  background-color: var(--vui-green);
+  border: 1px solid transparent;
+  border-radius: 3px;
+  color: white;
+  padding: 6px 12px;
+  font: 600 normal 13px/24px sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+  box-sizing: border-box;
+  text-align: center;
+}
+.v-button {
+  margin: 4px 2px;
+}
+.v-button:hover {
+  opacity: 0.8;
+}
+.v-button:active {
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.08) inset, 0 0 4px rgba(0, 0, 0, 0.1) inset;
+}
+.v-button[disabled],
+.v-button[disabled]:hover {
+  opacity: 0.68;
+}
+.v-button[disabled]:active {
+  box-shadow: none;
+}
+.v-button.v-button--white {
+  background-color: white;
+  color: #999;
+  border-color: #ddd;
+}
+.v-button.v-button--block {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+}
