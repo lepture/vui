@@ -4,6 +4,7 @@
   "description": "UI framework for mobile built with vue.",
   "main": "index.js",
   "scripts": {
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
