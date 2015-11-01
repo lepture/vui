@@ -24,6 +24,7 @@
 .v-button[disabled],
 .v-button[disabled]:hover {
   opacity: 0.68;
+  cursor: not-allowed;
 }
 .v-button[disabled]:active {
   box-shadow: none;
