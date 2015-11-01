@@ -4,4 +4,5 @@ module.exports = {
   'range-slider-color': '#027AFB',
   'ios-green': '#4cd964',
   'ios-blue': '#027AFB',
+  'android-green': '#009A57',
 }
