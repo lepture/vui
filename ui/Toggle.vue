@@ -46,8 +46,8 @@ label.v-toggle input {
   cursor: pointer;
 }
 .v-toggle--checked .v-toggle__wrap {
-  background: #42b983;
-  border-color: #42b983;
+  background: var(--vui-green);
+  border-color: var(--vui-green);
 }
 .v-toggle .v-toggle__mask {
   position: absolute;

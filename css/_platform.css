@@ -1,4 +1,4 @@
-/** Toggle UI */
+/** Toggle */
 .ios .v-toggle .v-toggle__wrap {
   width: 51px;
 }
@@ -23,4 +23,16 @@
 .ios .v-toggle--checked .v-toggle__wrap {
   background: var(--ios-green);
   border-color: var(--ios-green);
+}
+
+/** Range Slider */
+.ios .v-range-slider input::-webkit-slider-runnable-track {
+  height: 1px;
+}
+.ios .v-range-slider input::-webkit-slider-thumb:before {
+  background: var(--ios-blue);
+  height: 1px;
+}
+.ios .v-range-slider input::-webkit-slider-thumb {
+  box-shadow: 0 0 1px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,0.2);
 }

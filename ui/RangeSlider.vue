@@ -45,14 +45,14 @@ export default {
   outline: none;
   -webkit-tap-highlight-color: transparent;
 }
-.v-range-slider input[type=range]::-webkit-slider-runnable-track {
+.v-range-slider input::-webkit-slider-runnable-track {
   position: relative;
   height: 2px;
   background: #ddd;
   border: none;
   border-radius: 3px;
 }
-.v-range-slider input[type=range]::-webkit-slider-thumb {
+.v-range-slider input::-webkit-slider-thumb {
   -webkit-appearance: none;
   position: relative;
   margin-top: -12px;
@@ -62,9 +62,9 @@ export default {
   border: 0;
   border-radius: 50%;
   background: white;
-  box-shadow: 0 0 1px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,0.2);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
 }
-.v-range-slider input[type=range]::-webkit-slider-thumb:before {
+.v-range-slider input::-webkit-slider-thumb:before {
   position: absolute;
   display: inline-block;
   content: '';
@@ -72,6 +72,6 @@ export default {
   left: -2001px;
   width: 2000px;
   height: 2px;
-  background: var(--range-slider-color);
+  background: var(--vui-green);
 }
 </style>
