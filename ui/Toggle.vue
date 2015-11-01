@@ -1,10 +1,7 @@
 <template>
 <label class="v-toggle" :class="{'v-toggle--checked': checked}">
-<input type="checkbox" v-model="checked" :name="name">
-<div class="v-toggle__wrap">
+  <input type="checkbox" v-model="checked" :name="name">
   <span class="v-toggle__handle"></span>
-  <div class="v-toggle__mask"></div>
-</div>
 </label>
 </template>
 
@@ -26,17 +23,6 @@ export default {
 label.v-toggle {
   position: relative;
   display: inline-block;
-  pointer-events: auto;
-  padding: 5px;
-  margin: -5px;
-  -webkit-tap-highlight-color: transparent;
-}
-label.v-toggle input {
-  display: none;
-}
-.v-toggle .v-toggle__wrap {
-  position: relative;
-  display: inline-block;
   height: 31px;
   width: 68px;
   border-radius: 20px;
@@ -45,22 +31,15 @@ label.v-toggle input {
   border: solid 2px #e6e6e6;
   cursor: pointer;
   vertical-align: middle;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
 }
-.v-toggle--checked .v-toggle__wrap {
+label.v-toggle input {
+  display: none;
+}
+label.v-toggle--checked.v-toggle {
   background: var(--vui-green);
   border-color: var(--vui-green);
-}
-.v-toggle .v-toggle__mask {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-  background: #e6e6e6;
-}
-.v-toggle--checked .v-toggle__mask {
-  opacity: 0;
 }
 .v-toggle .v-toggle__handle {
   position: absolute;
@@ -77,28 +56,28 @@ label.v-toggle input {
 .v-toggle--checked .v-toggle__handle {
   transform: translate3d(37px, 0, 0);
 }
-.v-toggle__wrap::before,
-.v-toggle__wrap::after {
+.v-toggle::before,
+.v-toggle::after {
   position: absolute;
   top: 0;
   font-size: 12px;
   line-height: 30px;
 }
-.v-toggle__wrap::before {
+.v-toggle::before {
   left: 5px;
   content: 'ON';
   color: white;
   opacity: 0;
 }
-.v-toggle__wrap::after {
+.v-toggle::after {
   right: 5px;
   content: 'OFF';
   color: #666;
 }
-.v-toggle--checked .v-toggle__wrap::before {
+.v-toggle--checked.v-toggle::before {
   opacity: 1;
 }
-.v-toggle--checked .v-toggle__wrap::after {
+.v-toggle--checked.v-toggle::after {
   opacity: 0;
 }
 </style>
