@@ -1,3 +1,4 @@
+var fs = require('fs')
 var webpack = require('webpack')
 
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
@@ -5,10 +6,17 @@ var cssLoader = ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap!
 
 var contentBase = __dirname + '/public'
 
+var stylesheets = fs.readdirSync('./css')
+  .filter(function(name) {
+    return /\.css$/.test(name)
+  })
+  .map(function(name) {
+    return './css/' + name
+  })
 
 var options = {
   entry: {
-    app: ['./app.js'],
+    app: ['./app.js'].concat(stylesheets),
     vendor: ['vue', 'vue-router'],
   },
 
@@ -49,7 +57,7 @@ var options = {
 }
 
 if (process.env.NODE_ENV === 'production') {
-  options.entry = ['./index.js']
+  options.entry = ['./index.js'].concat(stylesheets)
   options.output = {
     path: './build',
     filename: 'vui.js',

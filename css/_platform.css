@@ -1,0 +1,26 @@
+/** Toggle UI */
+.ios .v-toggle .v-toggle__wrap {
+  width: 51px;
+}
+.ios .v-toggle .v-toggle__handle {
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.35), 0 1px 1px rgba(0, 0, 0, 0.15);
+}
+.ios .v-toggle .v-toggle__mask {
+  background: white;
+  transition: transform 0.3s;
+  transform: scale3d(1, 1, 1);
+}
+.ios .v-toggle__wrap::before,
+.ios .v-toggle__wrap::after {
+  display: none;
+}
+.ios .v-toggle--checked .v-toggle__mask {
+  transform: scale3d(0, 0, 0);
+}
+.ios .v-toggle--checked .v-toggle__handle {
+  transform: translate3d(20px, 0, 0);
+}
+.ios .v-toggle--checked .v-toggle__wrap {
+  background: var(--ios-green);
+  border-color: var(--ios-green);
+}
