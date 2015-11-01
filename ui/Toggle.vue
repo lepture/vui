@@ -44,6 +44,7 @@ label.v-toggle input {
   background: #e6e6e6;
   border: solid 2px #e6e6e6;
   cursor: pointer;
+  vertical-align: middle;
 }
 .v-toggle--checked .v-toggle__wrap {
   background: var(--vui-green);

@@ -92,7 +92,7 @@ export default {
   overflow: hidden;
   font: 300 normal 24px/48px sans-serif;
 }
-.v-avatar.squared {
+.v-avatar--squared {
   border-radius: 2px;
 }
 .v-avatar .v-avatar__text {
