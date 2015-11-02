@@ -57,3 +57,22 @@
 .ios .v-range-slider input::-webkit-slider-thumb {
   box-shadow: 0 0 1px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,0.2);
 }
+
+/** Radio Group */
+.ios .v-radio input:before {
+  opacity: 0;
+}
+.ios .v-radio li {
+  border-bottom: 1px solid #ddd;
+  margin-left: 2em;
+  padding: 0.6em 0 0.4em;
+}
+.ios .v-radio li:last-of-type {
+  border-bottom: 0;
+}
+.ios .v-radio li input {
+  margin-left: -2.2em;
+}
+.ios .v-radio input:before {
+  border-color: var(--ios-blue);
+}

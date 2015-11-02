@@ -65,3 +65,43 @@
   height: 22px;
   margin-top: -9px;
 }
+
+/** Radio */
+.android .v-radio input {
+  position: relative;
+}
+.android .v-radio input:before {
+  position: static;
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--android-green);
+  opacity: 1;
+  transform: scale3d(0, 0, 0);
+  box-shadow: none;
+  border: 0;
+  transition: transform 0.15s;
+}
+.android .v-radio input:after {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  display: block;
+  content: '';
+  width: 18px;
+  height: 18px;
+  border: 2px solid #5a5a5a;
+  border-radius: 50%;
+  box-sizing: border-box;
+  transition: background 0.1s;
+}
+.android .v-radio input:checked:before {
+  transform: scale3d(1, 1, 1);
+}
+.android .v-radio input:checked:after {
+  border-color: var(--android-green);
+}
+.android .v-radio li {
+  border: none;
+}
