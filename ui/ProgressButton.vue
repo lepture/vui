@@ -44,5 +44,6 @@ export default {
   left: 0;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.1);
+  transition: width 0.2s;
 }
 </style>
