@@ -61,7 +61,7 @@
   border-radius: 10px;
   background: rgba(0, 0, 0, 0.2);
   opacity: 1;
-  transition: background 0.2s;
+  transition: background 0.15s;
 }
 .android .v-toggle--checked::before {
   background: rgba(0, 154, 87, 0.5);
@@ -73,11 +73,29 @@
   width: 22px;
   height: 22px;
   background: #f0f0f0;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35), 1px 1px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.4);
+  transition-duration: .15s;
 }
 .android .v-toggle--checked .v-toggle__handle {
   transform: translate3d(22px, 0, 0);
   background: var(--android-green);
+}
+.android .v-toggle .v-toggle__handle::before {
+  display: block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  content: '';
+  background: rgba(0, 0, 0, 0);
+  transform: scale3d(1, 1, 1);
+  transition: transform .15s;
+}
+.android .v-toggle:active .v-toggle__handle::before {
+  background: rgba(0, 0, 0, 0.2);
+  transform: scale3d(2.8, 2.8, 2.8);
+}
+.android .v-toggle--checked:active .v-toggle__handle::before {
+  background: rgba(0, 154, 87, 0.2);
 }
 
 /** Range Slider */
