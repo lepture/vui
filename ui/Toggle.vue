@@ -61,7 +61,7 @@ label.v-toggle--checked.v-toggle {
   position: absolute;
   top: 0;
   font-size: 12px;
-  line-height: 30px;
+  line-height: 28px;
 }
 .v-toggle::before {
   left: 5px;
