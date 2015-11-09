@@ -10,13 +10,27 @@
 import IScroll from 'iscroll'
 
 export default {
+  props: {
+    scrollbars: Boolean,
+    direction: {
+      type: String,
+      default: 'y'
+    }
+  },
   attached() {
-    this._iscroll = new IScroll(this.$el, {
-      scrollbars: true,
-      scrollY: true,
+    var options = {
       mouseWheel: true,
-      fadeScrollbars: true,
-    })
+    }
+    if (this.direction === 'x') {
+      options.scrollX = true
+    } else {
+      options.scrollY = true
+    }
+    if (this.scrollbars) {
+      options.scrollbars = true
+      options.fadeScrollbars = true
+    }
+    this._iscroll = new IScroll(this.$el, options)
   },
   detached() {
     if (this._iscroll) {
