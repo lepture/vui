@@ -1,0 +1,20 @@
+.v-tabs {
+  display: flex;
+  justify-content: center;
+  color: #454545;
+  background: #f7f7f7;
+  border-top: 1px solid #ddd;
+  height: 49px;
+  line-height: 49px;
+}
+.v-tabs .v-tabs__item {
+  flex: 1 1 0;
+  overflow: hidden;
+  white-space: nowrap;
+  color: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  text-align: center;
+  height: 100%;
+}
