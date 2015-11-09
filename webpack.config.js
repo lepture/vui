@@ -2,7 +2,7 @@ var fs = require('fs')
 var webpack = require('webpack')
 
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
-var cssLoader = ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap!postcss-loader')
+var cssLoader = ExtractTextPlugin.extract('style', 'css?sourceMap!postcss')
 
 var contentBase = __dirname + '/public'
 
