@@ -4,6 +4,8 @@
   border-top: 1px solid transparent;
   border-bottom: 1px solid #ddd;
   line-height: 43px;
+  justify-content: space-between;
+  align-content: center;
 }
 .v-navbar .v-navbar__title {
   flex: 1;
@@ -14,7 +16,14 @@
 }
 .v-navbar .v-navbar__left {
   align-items: flex-start;
+  margin: auto;
 }
 .v-navbar .v-navbar__right {
   align-items: flex-end;
+  margin: auto;
+}
+.v-navbar .v-button {
+  padding: 4px 12px;
+  font-weight: 400;
+  -webkit-font-smoothing: initial;
 }
