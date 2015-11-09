@@ -1,0 +1,20 @@
+.v-navbar {
+  display: flex;
+  padding: 5px;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid #ddd;
+  line-height: 43px;
+}
+.v-navbar .v-navbar__title {
+  flex: 1;
+  text-align: center;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 500;
+}
+.v-navbar .v-navbar__left {
+  align-items: flex-start;
+}
+.v-navbar .v-navbar__right {
+  align-items: flex-end;
+}
