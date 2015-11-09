@@ -5,6 +5,7 @@ var MenuButton = require('./ui/MenuButton.vue')
 var ProgressButton = require('./ui/ProgressButton.vue')
 var RangeSlider = require('./ui/RangeSlider.vue')
 
+var Scroll = require('./view/Scroll.vue')
 var SideMenus = require('./view/SideMenus.vue')
 
 exports.install = function(Vue) {
@@ -16,5 +17,6 @@ exports.install = function(Vue) {
   Vue.component('vui-range-slider', RangeSlider)
 
   // register views
+  Vue.component('vui-scroll', Scroll)
   Vue.component('vui-side-menus', SideMenus)
 }
