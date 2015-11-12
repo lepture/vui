@@ -17,7 +17,7 @@ var stylesheets = fs.readdirSync('./css')
 var options = {
   entry: {
     app: ['./app.js'].concat(stylesheets),
-    vendor: ['vue', 'vue-router'],
+    vendor: ['vue', 'iscroll', 'word-color'],
   },
 
   output: {
@@ -57,13 +57,19 @@ var options = {
 }
 
 if (process.env.NODE_ENV === 'production') {
-  options.entry = ['./index.js'].concat(stylesheets)
-  options.output = {
-    path: './build',
-    filename: 'vui.js',
-    library: 'vui',
-    libraryTarget: 'umd',
-  }
+  var defplugin = new webpack.DefinePlugin({
+    'process.env': {
+      NODE_ENV: '"production"'
+    }
+  })
+  var minplugin = new webpack.optimize.UglifyJsPlugin({
+    compress: {
+      warnings: false
+    }
+  })
+  options.plugins.push(defplugin)
+  options.plugins.push(minplugin)
+  options.plugins.push(new webpack.optimize.OccurenceOrderPlugin())
 }
 
 module.exports = options

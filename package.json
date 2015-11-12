@@ -4,7 +4,7 @@
   "description": "UI framework for mobile built with vue.",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "NODE_ENV=production webpack --progress --hide-modules",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,9 +20,11 @@
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^6.0.3",
-    "babel-core": "^5.8.29",
-    "babel-loader": "^5.3.2",
-    "babel-runtime": "^5.8.29",
+    "babel-core": "^6.1.4",
+    "babel-loader": "^6.1.0",
+    "babel-plugin-transform-runtime": "^6.1.4",
+    "babel-preset-es2015": "^6.1.4",
+    "babel-runtime": "^6.1.4",
     "css-loader": "^0.21.0",
     "extract-text-webpack-plugin": "^0.9.1",
     "postcss": "^5.0.11",
@@ -30,17 +32,15 @@
     "postcss-import": "^7.1.0",
     "postcss-loader": "^0.7.0",
     "style-loader": "^0.13.0",
+    "vue": "^1.0.7",
     "vue-hot-reload-api": "^1.2.1",
     "vue-html-loader": "^1.0.0",
-    "vue-loader": "^6.0.5",
-    "webpack": "^1.12.2",
-    "webpack-dev-server": "^1.12.1",
-    "vue": "^1.0.7",
-    "vue-router": "^0.7.5"
+    "vue-loader": "^7.0.2",
+    "webpack": "^1.12.4",
+    "webpack-dev-server": "^1.12.1"
   },
   "peerDependencies": {
-    "vue": "^1.0.0",
-    "vue-router": "^0.7.5"
+    "vue": "^1.0.7"
   },
   "dependencies": {
     "iscroll": "^5.1.3",
