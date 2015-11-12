@@ -1,9 +1,9 @@
 .v-button, button.v-button, a.v-button {
   display: inline-block;
-  background-color: var(--vui-green);
-  border: 1px solid transparent;
+  background-color: white;
+  border: 1px solid #ddd;
   border-radius: 3px;
-  color: white;
+  color: #999;
   padding: 6px 12px;
   font: 600 normal 13px/24px sans-serif;
   cursor: pointer;
@@ -29,10 +29,10 @@
 .v-button[disabled]:active {
   box-shadow: none;
 }
-.v-button.v-button--white {
-  background-color: white;
-  color: #999;
-  border-color: #ddd;
+.v-button.v-button--primary {
+  background-color: var(--vui-green);
+  color: white;
+  border-color: transparent;
 }
 .v-button.v-button--block {
   display: block;
