@@ -1,8 +1,8 @@
 <template>
   <div class="overlay">
     <div class="overlay__mask" @click="show=false"></div>
-    <slot name="overlay-hide"></slot>
     <div class="overlay__content">
+      <slot name="overlay-hide"></slot>
       <slot></slot>
     </div>
   </div>
@@ -48,7 +48,7 @@ export default {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.95);
   z-index: 9999;
 }
 .overlay--open {
@@ -73,4 +73,7 @@ export default {
   flex: 1;
 }
 /* slot=overlay-hide is an extra part to hide overlay */
+.overlay [slot="overlay-hide"] {
+  position: absolute;
+}
 </style>
