@@ -4,6 +4,7 @@
   "description": "UI framework for mobile built with vue.",
   "main": "index.js",
   "scripts": {
+    "start": "NODE_ENV=development node server.js",
     "build": "NODE_ENV=production webpack --progress --hide-modules",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

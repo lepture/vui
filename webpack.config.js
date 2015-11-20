@@ -5,19 +5,13 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var cssLoader = ExtractTextPlugin.extract('style', 'css?sourceMap!postcss')
 
 var contentBase = __dirname + '/public'
-
-var stylesheets = fs.readdirSync('./css')
-  .filter(function(name) {
-    return /\.css$/.test(name)
-  })
-  .map(function(name) {
-    return './css/' + name
-  })
+var pkg = require('./package.json')
+var vendor = Object.keys(pkg.dependencies)
 
 var options = {
   entry: {
-    app: ['./app.js'].concat(stylesheets),
-    vendor: ['vue', 'iscroll', 'word-color'],
+    app: ['./app.js', './css/index.css'],
+    vendor: vendor,
   },
 
   output: {
