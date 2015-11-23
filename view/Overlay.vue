@@ -13,10 +13,14 @@ export default {
   props: ['show'],
   methods: {
     open() {
-      document.body.classList.add('overlay--open')
+      var el = document.querySelector('html')
+      el.classList.add('overlay--open')
+      document.addEventListener('touchmove', disableScroll, false)
     },
     close() {
-      document.body.classList.remove('overlay--open')
+      var el = document.querySelector('html')
+      el.classList.remove('overlay--open')
+      document.removeEventListener('touchmove', disableScroll, false)
     },
   },
   ready() {
@@ -24,7 +28,7 @@ export default {
       this.open()
     }
   },
-  dettached() {
+  detached() {
     this.close()
   },
   watch: {
@@ -36,6 +40,10 @@ export default {
       }
     }
   }
+}
+
+function disableScroll(e) {
+  e.preventDefault()
 }
 </script>
 
@@ -51,7 +59,8 @@ export default {
   background-color: rgba(255, 255, 255, 0.95);
   z-index: 9999;
 }
-.overlay--open {
+.overlay--open,
+.overlay--open body {
   overflow: hidden;
 }
 .overlay--open .overlay {
