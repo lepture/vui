@@ -10,7 +10,7 @@ var vendor = Object.keys(pkg.dependencies)
 
 var options = {
   entry: {
-    app: ['./app.js', './css/index.css'],
+    app: ['./app.js', 'vui-base'],
     vendor: vendor,
   },
 
