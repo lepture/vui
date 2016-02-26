@@ -73,6 +73,7 @@
 .ios .v-radio li input {
   margin-left: -2.2em;
 }
-.ios .v-radio input:before {
+.ios .v-radio input:checked:before {
+  opacity: 1;
   border-color: var(--ios-blue);
 }
