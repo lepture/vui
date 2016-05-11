@@ -2,9 +2,19 @@ var webpack = require('webpack')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 var cssLoader = 'vue-style!css?sourceMap!postcss'
+if (process.env.NODE_ENV === 'production') {
+  cssLoader = ExtractTextPlugin.extract('vue-style', 'css!postcss')
+}
 
 var contentBase = __dirname + '/public'
 var pkg = require('./package.json')
+
+var plugins = [new webpack.DefinePlugin({
+  'process.env': {
+    NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development')
+  }
+})]
+
 
 var options = {
   entry: {
@@ -46,23 +56,18 @@ var options = {
     publicPath: '/assets/',
   },
 
+  plugins: plugins,
+
   devtool: 'source-map',
 }
 
 if (process.env.NODE_ENV === 'production') {
-  var defplugin = new webpack.DefinePlugin({
-    'process.env': {
-      NODE_ENV: '"production"'
-    }
-  })
-  var minplugin = new webpack.optimize.UglifyJsPlugin({
-    compress: {
-      warnings: false
-    }
-  })
-  options.plugins.push(defplugin)
-  options.plugins.push(minplugin)
-  options.plugins.push(new webpack.optimize.OccurenceOrderPlugin())
+  options.entry.vendor = Object.keys(pkg.dependencies)
+  plugins.push(new ExtractTextPlugin('app.css', {disable: false}))
+  plugins.push(new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.js"))
+  plugins.push(new webpack.optimize.UglifyJsPlugin({compress: {warnings: false}}))
+  plugins.push(new webpack.optimize.OccurenceOrderPlugin())
+  options.plugins = plugins
 }
 
 module.exports = options
