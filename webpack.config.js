@@ -1,16 +1,17 @@
 var webpack = require('webpack')
-
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
-var cssLoader = ExtractTextPlugin.extract('style', 'css?sourceMap!postcss')
+
+var cssLoader = 'vue-style!css?sourceMap!postcss'
 
 var contentBase = __dirname + '/public'
 var pkg = require('./package.json')
-var vendor = Object.keys(pkg.dependencies)
 
 var options = {
   entry: {
-    app: ['./app.js', 'vui-base'],
-    vendor: vendor,
+    app: [
+      './app.js',
+      './src/css/index.css'
+    ],
   },
 
   output: {
@@ -25,11 +26,6 @@ var options = {
     ]
   },
 
-  plugins: [
-      new ExtractTextPlugin('app.css', {disable: false}),
-      new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
-  ],
-
   vue: {
     loaders: {
       css: cssLoader,
@@ -39,8 +35,8 @@ var options = {
   postcss: function (pack) {
     // use webpack context
     return [
-      require('postcss-import')({addDependencyTo: pack}),
-      require('postcss-custom-properties')({variables: require('./variables')}),
+      require('postcss-import')({path: './src/css', addDependencyTo: pack}),
+      require('postcss-css-variables'),
       require('autoprefixer'),
     ]
   },
