@@ -46,7 +46,8 @@ var options = {
   },
 
   devServer: {
-    path: contentBase + '/assets/_site',
+    contentBase: contentBase + '/_site',
+    publicPath: '/assets/',
   },
 
   devtool: 'source-map',
