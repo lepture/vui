@@ -29,6 +29,7 @@ export default {
 </script>
 
 <style>
+@import "_variables.css";
 .v-range-slider {
   display: flex;
   align-items: center;

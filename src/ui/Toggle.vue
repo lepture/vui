@@ -20,6 +20,7 @@ export default {
 </script>
 
 <style>
+@import "_variables.css";
 label.v-toggle {
   position: relative;
   display: inline-block;

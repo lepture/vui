@@ -16,6 +16,7 @@ export default {
 </script>
 
 <style>
+@import "_variables.css";
 button.v-menu-button {
   position: relative;
   border: none;
