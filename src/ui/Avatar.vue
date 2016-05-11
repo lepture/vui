@@ -1,6 +1,6 @@
 <template>
   <span class="v-avatar" :style="styleSize" :class="{'v-avatar--image': image}" :aria-label="alt">
-    <span class="v-avatar__text" v-text="name" :style="{background: bg, color: fg}"></span>
+    <span class="v-avatar_text" v-text="name" :style="{background: bg, color: fg}"></span>
   </span>
 </template>
 
@@ -95,7 +95,7 @@ export default {
 .v-avatar--squared {
   border-radius: 2px;
 }
-.v-avatar .v-avatar__text {
+.v-avatar .v-avatar_text {
   display: inline-block;
   width: 100%;
   height: 100%;
@@ -106,7 +106,7 @@ export default {
   width: 100%;
   height: 100%;
 }
-.v-avatar--image .v-avatar__text {
+.v-avatar--image .v-avatar_text {
   display: none;
 }
 </style>

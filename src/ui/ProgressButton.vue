@@ -1,7 +1,7 @@
 <template>
   <button class="v-progress-button v-button" :disabled="disabled">
-    <span class="v-progress-button__progress" :style="{width: width}"></span>
-    <span class="v-progress-button__text"><slot></slot></span>
+    <span class="v-progress-button_progress" :style="{width: width}"></span>
+    <span class="v-progress-button_text"><slot></slot></span>
   </button>
 </template>
 
@@ -38,7 +38,7 @@ export default {
   position: relative;
   text-align: center;
 }
-.v-progress-button__progress {
+.v-progress-button_progress {
   position: absolute;
   top: 0;
   left: 0;

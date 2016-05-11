@@ -1,14 +1,14 @@
 <template>
   <div class="overlay">
-    <div class="overlay__mask" @click="show=false"></div>
-    <button class="overlay__close" aria-label="关闭" @click="show=false">
+    <div class="overlay_mask" @click="show=false"></div>
+    <button class="overlay_close" aria-label="Close" @click="show=false">
       <svg viewBox="0 0 40 40" tabindex="-1">
         <circle cx="20" cy="20" r="18"  stroke="#ccc" stroke-width="1" fill-opacity="0"/>
         <line x1="15" y1="15" x2="25" y2="25" stroke="#dadada" stroke-width="2"/>
         <line x1="15" y1="25" x2="25" y2="15" stroke="#dadada" stroke-width="2"/>
       </svg>
     </button>
-    <div class="overlay__content">
+    <div class="overlay_content">
       <slot name="overlay-hide"></slot>
       <slot></slot>
     </div>
@@ -71,7 +71,7 @@ export default {
 .overlay--open .overlay {
   display: flex;
 }
-.overlay__mask {
+.overlay_mask {
   position: absolute;
   left: 0;
   top: 0;
@@ -80,14 +80,14 @@ export default {
   z-index: 10;
   cursor: pointer;
 }
-.overlay__content {
+.overlay_content {
   position: relative;
   max-width: 860px;
   height: 100%;
   z-index: 22;
   flex: 1;
 }
-button.overlay__close {
+button.overlay_close {
   position: absolute;
   display: block;
   border: none;
@@ -102,13 +102,13 @@ button.overlay__close {
   animation: fade-in 1s cubic-bezier(1, 0.06, 0.74, 1);
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
-button.overlay__close svg {
+button.overlay_close svg {
   width: 40px;
   height: 40px;
   outline: none;
 }
 @media (max-width: 680px) {
-  .overlay button.overlay__close {
+  .overlay button.overlay_close {
     right: 20px;
   }
 }

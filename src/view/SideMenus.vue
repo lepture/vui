@@ -1,7 +1,7 @@
 <template>
 <div class="v-side-menus" :class="menuClass">
   <slot name="left-menu"></slot>
-  <div class="v-side-menus__content">
+  <div class="v-side-menus_content">
     <slot></slot>
   </div>
   <slot name="right-menu"></slot>
@@ -44,7 +44,7 @@ export default {
 .v-side-menus [slot=right-menu] {
   right: 0;
 }
-.v-side-menus .v-side-menus__content {
+.v-side-menus .v-side-menus_content {
   position: relative;
   width: 100%;
   height: 100%;
@@ -53,17 +53,17 @@ export default {
   background: white;
   z-index: 99;
 }
-.v-side-menus--left .v-side-menus__content,
-.v-side-menus--right .v-side-menus__content {
+.v-side-menus--left .v-side-menus_content,
+.v-side-menus--right .v-side-menus_content {
   position: fixed;
   width: 100%;
   perspective: 1000px;
 }
-.v-side-menus--left .v-side-menus__content {
+.v-side-menus--left .v-side-menus_content {
   transform: translate3d(275px, 0, 0);
   box-shadow: -3px 0 6px rgba(0, 0, 0, 0.1), -6px -6px 8px rgba(0, 0, 0, 0.05);
 }
-.v-side-menus--right .v-side-menus__content {
+.v-side-menus--right .v-side-menus_content {
   transform: translate3d(-275px, 0, 0);
   box-shadow: 3px 0 6px rgba(0, 0, 0, 0.1), 6px 6px 8px rgba(0, 0, 0, 0.05);
 }

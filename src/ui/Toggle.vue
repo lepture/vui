@@ -1,7 +1,7 @@
 <template>
 <label class="v-toggle" :class="{'v-toggle--checked': checked}">
   <input type="checkbox" v-model="checked" :name="name">
-  <span class="v-toggle__handle"></span>
+  <span class="v-toggle_handle"></span>
 </label>
 </template>
 
@@ -41,7 +41,7 @@ label.v-toggle--checked.v-toggle {
   background: var(--vui-green);
   border-color: var(--vui-green);
 }
-.v-toggle .v-toggle__handle {
+.v-toggle .v-toggle_handle {
   position: absolute;
   left: 0;
   top: 0;
@@ -53,7 +53,7 @@ label.v-toggle--checked.v-toggle {
   z-index: 99;
   transition: transform 0.3s;
 }
-.v-toggle--checked .v-toggle__handle {
+.v-toggle--checked .v-toggle_handle {
   transform: translate3d(37px, 0, 0);
 }
 .v-toggle::before,
