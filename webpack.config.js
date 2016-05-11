@@ -1,4 +1,3 @@
-var fs = require('fs')
 var webpack = require('webpack')
 
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
@@ -17,7 +16,6 @@ var options = {
   output: {
     path: contentBase + '/assets',
     filename: 'app.js',
-    contentBase: contentBase,
   },
 
   module: {
@@ -45,6 +43,10 @@ var options = {
       require('postcss-custom-properties')({variables: require('./variables')}),
       require('autoprefixer'),
     ]
+  },
+
+  devServer: {
+    path: contentBase + '/assets/_site',
   },
 
   devtool: 'source-map',
