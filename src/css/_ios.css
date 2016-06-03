@@ -12,7 +12,7 @@
 .ios .v-toggle--checked .v-toggle_handle {
   transform: translate3d(20px, 0, 0);
 }
-.ios .v-toggle::before {
+.ios .v-toggle:before {
   content: '';
   position: absolute;
   display: block;
@@ -24,10 +24,10 @@
   background: #e6e6e6;
   transition: opacity 0.3s;
 }
-.ios .v-toggle--checked::before {
+.ios .v-toggle--checked:before {
   opacity: 0;
 }
-.ios .v-toggle::after {
+.ios .v-toggle:after {
   content: '';
   position: absolute;
   display: block;
@@ -40,7 +40,7 @@
   transform: scale3d(1, 1, 1);
   transition: transform 0.3s;
 }
-.ios .v-toggle--checked::after {
+.ios .v-toggle--checked:after {
   transform: scale3d(0, 0, 0);
   opacity: 1;
 }

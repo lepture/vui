@@ -3,7 +3,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 var cssLoader = 'vue-style!css?sourceMap!postcss'
 if (process.env.NODE_ENV === 'production') {
-  cssLoader = ExtractTextPlugin.extract('vue-style', 'css!postcss')
+  cssLoader = ExtractTextPlugin.extract('vue-style', 'css?-reduceTransforms!postcss')
 }
 
 var contentBase = __dirname + '/public'
