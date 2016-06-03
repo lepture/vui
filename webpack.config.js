@@ -54,6 +54,7 @@ var options = {
   devServer: {
     contentBase: contentBase + '/_site',
     publicPath: '/assets/',
+    host: '0.0.0.0',
   },
 
   plugins: plugins,
