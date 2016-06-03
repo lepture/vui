@@ -2,6 +2,8 @@
 
 A UI framework for mobile, built with Vue.
 
+[![Donate lepture](https://img.shields.io/badge/donate-lepture-green.svg)](https://lepture.herokuapp.com/?amount=1000&reason=lepture%2Fvui)
+
 
 ## Design Pattern
 
